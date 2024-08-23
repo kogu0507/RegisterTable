@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    width: 100%;
+    /* max-height: 400px; */ /* テーブルの高さを制限 */
+    overflow-y: auto; /* 縦スクロールを可能に */
+    overflow-x: auto; /* 横スクロールを可能に */
+    -webkit-overflow-scrolling: touch; /* スムーズなスクロールを可能に */
+    position: relative;
+}
+
+#table03 {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* テーブルの最小幅を指定 */
+}
+
+#table03 th, #table03 td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: centers;
+}
+
+table th:nth-child(1),table td:nth-child(1){
+    width: 100px; /* 1列目の幅 */    
+}
+
+table th:nth-child(2),table td:nth-child(2), 
+table th:nth-child(3),table td:nth-child(3) {
+    width: 200px; /* 2,3列目の幅 */
+}
+
+table th:nth-child(4),table td:nth-child(4) {
+    min-width: 200px; /* 4列目の最小幅 */
+}
+
+
+#table03 th {
+    background-color: #f2f2f2;
+    position: sticky; /* 固定するためにstickyを使用 */
+    top: 0; /* テーブルヘッダーを上部に固定 */
+    z-index: 2; /* テーブルの内容よりも上に表示 */
+}
+
+#table03 tbody th {
+    position: sticky; /* 固定するためにstickyを使用 */
+    left: 0; /* 行の見出しを左側に固定 */
+    background-color: #f9f9f9; /* 行の見出しに背景色を設定 */
+    z-index: 1; /* テーブルヘッダーよりも下に表示 */
+}
+
+.staff-image-size { 
+    width: 100%; /* ここに指定したい幅を入れてください */
+}
