@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作曲編曲便利帳（仮） - ホルンの紹介</title>
+    <style>
+        /* 以下 base.css に記載 */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            padding: 2rem;
+        }
+        h1 {
+            color: #333;
+        }
+        .nav-container {
+            position: relative;
+        }
+        .nav-button {
+            background-color: #444;
+            color: #fff;
+            padding: 1rem;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+            font-size: 1rem;
+            width: 100%;
+        }
+        .nav-menu {
+            display: none;
+            position: absolute;
+            background-color: #555;
+            color: #fff;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            z-index: 1000;
+        }
+        .nav-menu.active {
+            display: block;
+        }
+        .nav-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu ul li {
+            position: relative;
+            padding: 10px;
+            margin: 0;
+        }
+        .nav-menu ul li a,
+        .nav-menu ul li button {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            background: none;
+            border: none;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .nav-menu ul li a:hover,
+        .nav-menu ul li button:hover {
+            background-color: #666;
+        }
+        .arrow {
+            display: inline-block;
+            margin-left: 5px;
+            transition: transform 0.3s;
+        }
+        .arrow.rotate {
+            transform: rotate(180deg);
+        }
+        .inst-group-item {
+            padding-left: 20px; /* グループは少しインデント */
+        }
+        .inst-sub-item {
+            padding-left: 40px; /* サブグループはさらにインデント */
+        }
+        .hidden {
+            display: none;
+        }
+        /* hr.html固有 */
+        .instrument-section {
+            margin-bottom: 2rem;
+        }
+        .instrument-section img {
+            max-width: 100%;
+            height: auto;
+        }
+        .read-more {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>作曲編曲便利帳（仮）</h1>
+</header>
+<div class="nav-container">
+    <button class="nav-button" aria-expanded="false" aria-controls="nav-menu" onclick="toggleNavMenu()">ツール</button>
+    <div id="nav-menu" class="nav-menu" aria-hidden="true">
+        <ul>
+            <li>
+                <button onclick="toggleMainMenu(event, 'inst-group-item', 'inst-sub-item'); toggleArrow(this)">
+                    楽器辞典 <span class="arrow">▼</span>
+                </button>
+            </li>
+            <li class="inst-group-item hidden" id="woodwind-item">
+                <button onclick="toggleGroupMenu(event, 'woodwind-sub-item'); toggleArrow(this)">
+                    木管楽器 <span class="arrow">▼</span>
+                </button>
+            </li>
+            <li class="inst-sub-item woodwind-sub-item hidden" id="flute-item">
+                <a href="#">フルート</a>
+            </li>
+            <li class="inst-sub-item woodwind-sub-item hidden" id="clarinet-item">
+                <a href="#">クラリネット</a>
+            </li>
+            <li class="inst-group-item hidden" id="brass-item">
+                <button onclick="toggleGroupMenu(event, 'brass-sub-item'); toggleArrow(this)">
+                    金管楽器 <span class="arrow">▼</span>
+                </button>
+            </li>
+            <li class="inst-sub-item brass-sub-item hidden" id="horn-item">
+                <a href="#">ホルン</a>
+            </li>
+            <li class="inst-sub-item brass-sub-item hidden" id="trumpet-item">
+                <a href="#">トランペット</a>
+            </li>
+            <li class="inst-sub-item brass-sub-item hidden" id="trombone-item">
+                <a href="#">トロンボーン</a>
+            </li>
+            <li class="inst-group-item hidden" id="percussion-item">
+                <button onclick="toggleGroupMenu(event, 'percussion-sub-item'); toggleArrow(this)">
+                    打楽器 <span class="arrow">▼</span>
+                </button>
+            </li>
+            <li class="inst-sub-item percussion-sub-item hidden" id="drum-item">
+                <a href="#">ドラム</a>
+            </li>
+            <li class="inst-sub-item percussion-sub-item hidden" id="xylophone-item">
+                <a href="#">シロフォン</a>
+            </li>
+            <li class="inst-group-item hidden" id="strings-item">
+                <button onclick="toggleGroupMenu(event, 'strings-sub-item'); toggleArrow(this)">
+                    弦楽器 <span class="arrow">▼</span>
+                </button>
+            </li>
+            <li class="inst-sub-item strings-sub-item hidden" id="violin-item">
+                <a href="#">バイオリン</a>
+            </li>
+            <li class="inst-sub-item strings-sub-item hidden" id="cello-item">
+                <a href="#">チェロ</a>
+            </li>
+            <li><a href="#">ツール1</a></li>
+            <li><a href="#">ツール2</a></li>
+            <li><a href="#">ツール3</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <h1>ホルン</h1>
+    <p>メモ：2024/09/01 これは各楽器の詳細ページ。他に表で楽器を比較するページもあり。
+        <br>テキストはChatGPTが自動生成したものを使用
+        <br>JavaScriptはレイアウト部分（base.jsに以降予定）のみ使用。
+        <br>CSSはレイアウト部分（base.cssに以降予定）のみ使用。
+        <br>ある程度まではHTMLに書く（更新のないっぽいもの。Read moreはデータベース（JSON）から。
+        <br>【メニュー案】
+        <br>ツール（作曲、編曲時につかう）
+        <br>アイディア？（煮詰まった時のネタ。リズム自動生成とか？）
+        <br>トレーニング？（作曲課題とか？）
+
+
+    </p>
+
+    <!-- ホルンの紹介セクション -->
+    <section class="instrument-section">
+        <h2>ホルンの紹介</h2>
+        <p>ホルンは、金管楽器の一種で、その柔らかく豊かな音色でオーケストラや吹奏楽で広く使われます。フランスホルンとも呼ばれ、特に映画音楽やクラシックの中で重要な役割を果たしています。</p>
+    </section>
+
+    <!-- 音域表セクション -->
+    <section class="instrument-section">
+        <h2>音域表</h2>
+        <img src="images/horn_range.png" alt="ホルンの音域表">
+    </section>
+
+    <!-- 音域ノートセクション -->
+    <section class="instrument-section">
+        <h2>音域ノート</h2>
+        <p>ホルンの音域はF管で一般的に低音域のCから高音域のFまでカバーします。経験豊かな奏者はさらに広い音域を演奏することも可能です。</p>
+    </section>
+
+    <!-- 基本奏法セクション -->
+    <section class="instrument-section">
+        <h2>基本奏法</h2>
+        <p>ホルンの基本的な演奏技術には、以下の奏法が含まれます。</p>
+        <ul>
+            <li>レガート奏法</li>
+            <li>スタッカート奏法</li>
+            <li>ダブルタンギング</li>
+        </ul>
+        <span class="read-more">Read more...</span>
+        基本奏法の詳細はJSONから読み込む予定
+        <!-- 基本奏法の詳細はJSONから読み込む予定 -->
+    </section>
+
+    <!-- 特殊奏法セクション -->
+    <section class="instrument-section">
+        <h2>特殊奏法</h2>
+        <p>ホルンには、特殊な効果を出すための様々な奏法もあります。</p>
+        <ul>
+            <li>ハンドストッピング</li>
+            <li>トリル</li>
+            <li>ミュート奏法</li>
+        </ul>
+        <span class="read-more">Read more...</span>
+        特殊奏法の詳細はJSONから読み込む予定
+        <!-- 特殊奏法の詳細はJSONから読み込む予定 -->
+    </section>
+
+    <!-- 他の楽器との組み合わせ例セクション -->
+    <section class="instrument-section">
+        <h2>他の楽器との組み合わせ例</h2>
+        <p>ホルンは、弦楽器や他の金管楽器と組み合わせることで、豊かなハーモニーを作り出します。特に弦楽器とのデュオや木管楽器と組み合わせると、印象的な音楽表現が可能です。</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2024 作曲編曲便利帳（仮）</p>
+</footer>
+
+<script>
+    // メニューの開閉処理
+    function toggleNavMenu() {
+        const menu = document.getElementById('nav-menu');
+        menu.classList.toggle('active');
+        menu.setAttribute('aria-hidden', !menu.classList.contains('active'));
+        document.querySelector('.nav-button').setAttribute('aria-expanded', menu.classList.contains('active'));
+    }
+
+    // メインメニューの表示/非表示
+    function toggleMainMenu(event, groupClass, subClass) {
+        event.preventDefault();
+        document.querySelectorAll(`.${groupClass}`).forEach(groupItem => {
+            groupItem.classList.toggle('hidden');
+        });
+        document.querySelectorAll(`.${subClass}`).forEach(subItem => {
+            subItem.classList.add('hidden');
+        });
+    }
+
+    // 楽器グループのサブメニューの表示/非表示
+    function toggleGroupMenu(event, subClass) {
+        event.preventDefault();
+        document.querySelectorAll(`.${subClass}`).forEach(subItem => {
+            subItem.classList.toggle('hidden');
+        });
+    }
+
+    // ボタンの矢印を回転させる
+    function toggleArrow(element) {
+        const arrow = element.querySelector('.arrow');
+        arrow.classList.toggle('rotate');
+    }
+</script>
+</body>
+</html>
