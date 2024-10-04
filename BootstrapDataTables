@@ -1,0 +1,767 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test BootstrapDataTables</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+</head>
+
+<body>
+    <h1 class="display-1">test BootstrapDataTables</h1>
+    <div id="ctrl-panel-button-container"></div>
+    <div id="control-panel" class="d-none">
+        <h2 class="display-2">Preset</h2>
+        <div id="ctrl-panel">
+            <div id="preset-selector-container"></div>
+            <button id="presetButton" class="btn btn-primary">Apply Preset</button>
+            <div id="selectedPreset" class="mt-3"></div>
+        </div>
+    </div>
+    <table id="example" class="table table-bordered" aria-label="Sample table for sorting and hiding rows">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>order</th>
+                <th>楽器名</th>
+                <th>音域サンプル</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>001</td>
+                <td>order</td>
+                <td>Piccolo</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td>order</td>
+                <td>Flute</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>003</td>
+                <td>order</td>
+                <td>Alto Flute in G</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>004</td>
+                <td>order</td>
+                <td>Bass Flute</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>005</td>
+                <td>order</td>
+                <td>Oboe</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>006</td>
+                <td>order</td>
+                <td>Oboe d'amore</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>007</td>
+                <td>order</td>
+                <td>English Horn</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>008</td>
+                <td>order</td>
+                <td>Clarinet in Eb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>009</td>
+                <td>order</td>
+                <td>Clarinet in Bb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>010</td>
+                <td>order</td>
+                <td>Clarinet in A</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>011</td>
+                <td>order</td>
+                <td>Alto Clarinet in Eb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>012</td>
+                <td>order</td>
+                <td>Alto Clarinet in F</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>013</td>
+                <td>order</td>
+                <td>Bass Clarinet in Bb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>014</td>
+                <td>order</td>
+                <td>Basset Horn in F</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>015</td>
+                <td>order</td>
+                <td>Bassoon</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>016</td>
+                <td>order</td>
+                <td>Double Bassoon</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+
+            </tr>
+            <tr>
+                <td>017</td>
+                <td>order</td>
+                <td>Sopranino Saxophone in Eb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>018</td>
+                <td>order</td>
+                <td>Soprano Saxophone in Bb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>019</td>
+                <td>order</td>
+                <td>Alto Saxophone in Eb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>020</td>
+                <td>order</td>
+                <td>Tenor Saxophone in Bb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>021</td>
+                <td>order</td>
+                <td>Baritone Saxophone in Eb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>022</td>
+                <td>order</td>
+                <td>Bass saxophone in Bb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>023</td>
+                <td>order</td>
+                <td>Horn in F</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>024</td>
+                <td>order</td>
+                <td>Piccolo Trumpet in C</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>025</td>
+                <td>order</td>
+                <td>Piccolo Trumpet in Bb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>026</td>
+                <td>order</td>
+                <td>Piccolo Trumpet in A</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>027</td>
+                <td>order</td>
+                <td>Trumpet in C</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>028</td>
+                <td>order</td>
+                <td>Trumpet in Bb</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>029</td>
+                <td>order</td>
+                <td>Bass Trumpet in C</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>030</td>
+                <td>order</td>
+                <td>Trombone</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>031</td>
+                <td>order</td>
+                <td>Euphonium</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>032</td>
+                <td>order</td>
+                <td>Tuba</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>033</td>
+                <td>order</td>
+                <td>Piano</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>034</td>
+                <td>order</td>
+                <td>Violin</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>035</td>
+                <td>order</td>
+                <td>Viola</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>036</td>
+                <td>order</td>
+                <td>Violoncello</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+            <tr>
+                <td>037</td>
+                <td>order</td>
+                <td>Contrabass</td>
+                <td><img class='img-fluid' src='https://kogu0507.github.io/RegisterTable/testSVG.svg'
+                        alt='sample image'>4列1行</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        TODO:
+        <ul>
+            <li>order列を非表示</li>
+            <li>プリセット簡略化？：検索ボックスに高速テキスト入力？</li>
+            <li>楽器どこまで載せるん？</li>
+            <li>とりあえず音域サンプル・その他を入力（ドリコ.SVG）</li>
+            <li>ってか何載せるん？</li>
+        </ul>
+
+    </p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <!-- <script src="table_data.js"></script> -->
+
+    <script type="module">
+        $(document).ready(function () {
+            createControlPanelButton();
+            const PRESETS = [
+                {
+                    name: 'All Instruments',
+                    order:
+                        [
+                            // Flute
+                            1, 2, 3, 4,
+                            // Oboe
+                            5, 6, 7,
+                            // Clarinet
+                            8, 9, 10, 11, 12, 13, 14,
+                            // Bassoon
+                            15, 16,
+                            // Sax
+                            17, 18, 19, 20, 21, 22,
+                            // Hr
+                            23,
+                            // Tpt
+                            24, 25, 26, 27, 28, 29,
+                            // Tbn,Euph,Tuba
+                            30, 31, 32,
+                            // Piano
+                            33,
+                            // Str
+                            34, 35, 36, 37,
+                        ]
+                }, {
+                    name: 'Wind Quintet',
+                    order:
+                        [
+                            // Flute
+                            9999, 1, 9999, 9999,
+                            // Oboe
+                            2, 9999, 9999,
+                            // Clarinet
+                            9999, 9999, 3, 9999, 9999, 9999, 9999,
+                            // Bassoon
+                            5, 9999,
+                            // Sax
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Hr
+                            4,
+                            // Tpt
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Tbn,Euph,Tuba
+                            9999, 9999, 9999,
+                            // Piano
+                            9999,
+                            // Str
+                            9999, 9999, 9999, 9999,
+                        ]
+                }, {
+                    name: 'Brass Quintet',
+                    order:
+                        [
+                            // Flute
+                            9999, 9999, 9999, 9999,
+                            // Oboe
+                            9999, 9999, 9999,
+                            // Clarinet
+                            9999, 9999, 9999, 9999, 9999, 9999, 9999,
+                            // Bassoon
+                            9999, 9999,
+                            // Sax
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Hr
+                            3,
+                            // Tpt
+                            9999, 9999, 9999, 9999, 1, 9999,
+                            // Tbn,Euph,Tuba
+                            4, 9999, 5,
+                            // Piano
+                            9999,
+                            // Str
+                            9999, 9999, 9999, 9999,
+                        ]
+                }, {
+                    name: 'String Quartet',
+                    order:
+                        [
+                            // Flute
+                            9999, 9999, 9999, 9999,
+                            // Oboe
+                            9999, 9999, 9999,
+                            // Clarinet
+                            9999, 9999, 9999, 9999, 9999, 9999, 9999,
+                            // Bassoon
+                            9999, 9999,
+                            // Sax
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Hr
+                            9999,
+                            // Tpt
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Tbn,Euph,Tuba
+                            9999, 9999, 9999,
+                            // Piano
+                            9999,
+                            // Str
+                            1, 3, 4, 9999,
+                        ]
+                }, {
+                    name: 'Woodwinds',
+                    order:
+                        [
+                            // Flute
+                            1, 2, 3, 4,
+                            // Oboe
+                            5, 6, 7,
+                            // Clarinet
+                            8, 8, 10, 11, 12, 13, 14,
+                            // Bassoon
+                            15, 16,
+                            // Sax
+                            17, 18, 19, 20, 21, 22,
+                            // Hr
+                            9999,
+                            // Tpt
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Tbn,Euph,Tuba
+                            9999, 9999, 9999,
+                            // Piano
+                            9999,
+                            // Str
+                            9999, 9999, 9999, 9999,
+                        ]
+                }, {
+                    name: 'Flute Family',
+                    order:
+                        [
+                            // Flute
+                            1, 2, 3, 4,
+                            // Oboe
+                            9999, 9999, 9999,
+                            // Clarinet
+                            9999, 9999, 9999, 9999, 9999, 9999, 9999,
+                            // Bassoon
+                            9999, 9999,
+                            // Sax
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Hr
+                            9999,
+                            // Tpt
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Tbn,Euph,Tuba
+                            9999, 9999, 9999,
+                            // Piano
+                            9999,
+                            // Str
+                            9999, 9999, 9999, 9999,
+                        ]
+                }, {
+                    name: 'Oboe Family',
+                    order:
+                        [
+                            // Flute
+                            9999, 9999, 9999, 9999,
+                            // Oboe
+                            5, 6, 7,
+                            // Clarinet
+                            9999, 9999, 9999, 9999, 9999, 9999, 9999,
+                            // Bassoon
+                            9999, 9999,
+                            // Sax
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Hr
+                            9999,
+                            // Tpt
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Tbn,Euph,Tuba
+                            9999, 9999, 9999,
+                            // Piano
+                            9999,
+                            // Str
+                            9999, 9999, 9999, 9999,
+                        ]
+                }, {
+                    name: 'Orchestra 1',
+                    order:
+                        [
+                            // Flute
+                            1, 2, 9999, 9999,
+                            // Oboe
+                            5, 9999, 7,
+                            // Clarinet
+                            9999, 9, 10, 9999, 9999, 13, 9999,
+                            // Bassoon
+                            15, 16,
+                            // Sax
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Hr
+                            23,
+                            // Tpt
+                            9999, 9999, 9999, 27, 28, 9999,
+                            // Tbn,Euph,Tuba
+                            30, 9999, 33,
+                            // Piano
+                            33,
+                            // Str
+                            34, 35, 36, 37,
+                        ]
+                }, {
+                    name: 'Orchestra 2',
+                    order:
+                        [
+                            // Flute
+                            1, 2, 3, 9999,
+                            // Oboe
+                            5, 9999, 7,
+                            // Clarinet
+                            9999, 9, 10, 9999, 9999, 13, 9999,
+                            // Bassoon
+                            15, 16,
+                            // Sax
+                            9999, 9999, 9999, 9999, 9999, 9999,
+                            // Hr
+                            23,
+                            // Tpt
+                            9999, 9999, 9999, 27, 28, 9999,
+                            // Tbn,Euph,Tuba
+                            30, 9999, 33,
+                            // Piano
+                            33,
+                            // Str
+                            34, 35, 36, 37,
+                        ]
+                }
+
+            ];
+
+            // DataTablesクラスのインスタンスを作成し、初期化
+            const dataTable = new DataTables('example');
+            dataTable.initialize();
+
+            // ボタンを生成する関数
+            function createControlPanelButton() {
+                const buttonContainer = document.getElementById('ctrl-panel-button-container');
+
+                // ボタン要素を作成
+                try {
+                    const button = document.createElement('button');
+                    button.type = 'button'; // ボタンのタイプを設定
+                    button.className = 'btn btn-primary'; // Bootstrapのクラスを追加
+                    button.textContent = 'コントロールパネル'; // ボタンのテキストを設定
+                    button.onclick = toggleControlPanel; // クリック時の処理を設定
+
+                    // ボタンをコンテナに追加
+                    if (buttonContainer) {
+                        buttonContainer.appendChild(button);
+                    } else {
+                        console.error("ボタンコンテナが見つかりません。");
+                    }
+                } catch (error) {
+                    console.error("ボタンの生成中にエラーが発生しました:", error);
+                }
+            }
+
+            // コントロールパネルの表示/非表示を切り替える関数
+            function toggleControlPanel() {
+                const controlPanel = document.getElementById('control-panel');
+
+                // コントロールパネルが存在するかをチェック
+                if (controlPanel) {
+                    // d-noneクラスを切り替え
+                    try {
+                        controlPanel.classList.toggle('d-none'); // d-noneクラスを切り替え
+                    } catch (error) {
+                        console.error("コントロールパネルの表示/非表示切替中にエラーが発生しました:", error);
+                    }
+                } else {
+                    console.error("コントロールパネルが見つかりません。");
+                }
+            }
+
+            // ドロップダウンを自動生成する関数を呼び出し
+            const CONTAINER_ELEMENT = document.getElementById('preset-selector-container');
+            createPresetDropdown(PRESETS, CONTAINER_ELEMENT);
+
+            // Presetボタンのクリックイベントを設定
+            $('#presetButton').click(function () {
+                const selectedPresetIndex = $('#presetSelector').val();
+                dataTable.applyPreset(PRESETS[selectedPresetIndex].order);
+                // 選択されたプリセット名を表示
+                displaySelectedPreset(PRESETS, selectedPresetIndex);
+            });
+        });
+
+
+
+        // ドロップダウンメニューを生成する関数
+        function createPresetDropdown(presets, container) {
+            if (!Array.isArray(presets) || !container) {
+                throw new Error('Invalid arguments');
+            }
+
+            const selectElement = document.createElement('select');
+            selectElement.id = 'presetSelector';
+            selectElement.classList.add('form-select');
+            selectElement.setAttribute('aria-label', 'Select a Preset');
+
+            const fragment = document.createDocumentFragment();
+            presets.forEach((preset, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = preset.name;
+                fragment.appendChild(option);
+            });
+
+            selectElement.appendChild(fragment);
+            container.appendChild(selectElement);
+        }
+
+        // 選択されたプリセット名を表示する関数
+        function displaySelectedPreset(presets, selectedPresetIndex) {
+            const selectedPreset = presets[selectedPresetIndex];
+            const presetDisplayElement = document.getElementById('selectedPreset');
+
+            // 選択されたプリセット名を表示
+            if (presetDisplayElement) {
+                presetDisplayElement.textContent = `Selected Preset: ${selectedPreset.name}`;
+            }
+        }
+
+
+        class DataTables {
+            constructor(tableId) {
+                this.tableId = tableId;
+                this.dataTable = null;  // DataTableの初期化
+                this.hiddenOrderValue = '9999';  // 非表示にするOrder列の値
+                this.ORDER_COLUMN_NUM = 1;  // Order列のインデックス（0始まりで2列目）
+            }
+
+            // テーブルIDから要素を取得
+            getTableId() {
+                const element = document.getElementById(this.tableId);
+                if (!element) {
+                    console.error(`ID "${this.tableId}" の要素が見つかりません`);
+                    return null;
+                }
+                return element;
+            }
+
+            // DataTableの初期化処理
+            initialize() {
+                const tableElement = this.getTableId();
+                if (!tableElement) {
+                    return;
+                }
+
+                // HTMLのtable要素からデータを読み込んでDataTableを初期化
+                this.dataTable = $(tableElement).DataTable({
+                    "order": [[0, "asc"]],  // 初期ソートをID列に設定
+                    "pageLength": 100
+                });
+
+                // 初期化が成功したかをログで確認
+                console.log(this.dataTable);
+            }
+
+            // 任意の列で昇順または降順にソートするメソッド
+            // columnIndex: ソートする列のインデックス
+            // direction: ソートの方向 ('asc' または 'desc')
+            sortTableByColumn(columnIndex, direction = 'asc') {
+                // 列のインデックスが範囲外でないか確認
+                if (columnIndex < 0 || columnIndex >= this.dataTable.columns().count()) {
+                    console.error('Invalid column index');
+                    return;
+                }
+
+                // 指定した列でソートを実行
+                this.dataTable.order([[columnIndex, direction]]).draw();
+            }
+
+            // 任意の列に対して正規表現によるフィルタリングを行うメソッド
+            // columnIndex: フィルタリングする列のインデックス
+            // regexPattern: 正規表現パターン
+            filterRowsByRegex(columnIndex, regexPattern) {
+                // 列のインデックスが範囲外でないか確認
+                if (columnIndex < 0 || columnIndex >= this.dataTable.columns().count()) {
+                    console.error('Invalid column index');
+                    return;
+                }
+
+                // 正規表現を使用してフィルタリングを実行
+                this.dataTable.column(columnIndex).search(regexPattern, true, false).draw();
+            }
+
+            // Order列の値がhiddenOrderValueでない行のみを表示するメソッド
+            filterRowsByHiddenValue(hiddenValue) {
+                // hiddenValueを文字列として扱い、それが含まれない行をフィルタする
+                const regex = `^(?!${hiddenValue}).*$`;  // 否定先読みを使用
+                // Order列に正規表現フィルタを適用
+                this.filterRowsByRegex(this.ORDER_COLUMN_NUM, regex);
+            }
+
+            // プリセットのOrder配列を適用してテーブルを更新するメソッド
+            // presetOrderArray: プリセットのOrder配列
+            applyPreset(presetOrderArray) {
+                if (!this.dataTable) {
+                    console.error("DataTablesインスタンスが初期化されていません");
+                    return;
+                }
+
+                // プリセット配列の長さがテーブルの行数と一致するか確認
+                if (presetOrderArray.length !== this.dataTable.rows().count()) {
+                    console.error("Preset array length does not match the number of table rows");
+                    return;
+                }
+
+                // プリセットのOrder配列と既存のOrder列を比較し、必要な行を更新
+                this.dataTable.rows().every((rowIdx, tableLoop, rowLoop) => {
+                    const currentOrder = this.dataTable.cell(rowIdx, this.ORDER_COLUMN_NUM).data();
+                    const newOrder = presetOrderArray[rowIdx];
+
+                    // Order列が異なる場合のみ更新
+                    if (currentOrder !== newOrder) {
+                        // データを更新
+                        this.dataTable.cell(rowIdx, this.ORDER_COLUMN_NUM).data(newOrder);
+                    }
+                });
+
+                // フィルタリング処理を実行 (hiddenOrderValueの行を除外)
+                this.filterRowsByHiddenValue(this.hiddenOrderValue);
+
+                // ソートを適用
+                this.sortTableByColumn(this.ORDER_COLUMN_NUM, 'asc');
+            }
+
+        }
+
+        $(document).ready(function () {
+            const dataTable = $('#example').DataTable();
+
+            // 「木管五重奏ボタン」がクリックされたときの処理
+            $('#woodwind-quintet-button').on('click', function () {
+                const searchTerm = 'Flute Oboe Clarinet Horn Bassoon';
+
+                // 検索ボックスに文字列を入力
+                $('#example_filter input').val(searchTerm);
+
+                // DataTableを再描画してフィルタリングを適用
+                dataTable.search(searchTerm).draw();
+            });
+        });
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
